@@ -6,6 +6,8 @@ a=path.join(__dirname,'../template/views')
 console.log(a)
 
 const app= express()
+const port=process.env.PORT || 3000
+
 
 //Define paths for express config
  viewPath=path.join(__dirname,'../template/views')
@@ -20,7 +22,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(path.join((__dirname,'./public'))))
 
 app.get('',(req,res)=>{
-    res.send('main page')
+    res.render('main')
 })                  
 
 app.get('/weather',(req,res)=>{
@@ -30,5 +32,5 @@ app.get('/weather',(req,res)=>{
 })       
 
 app.listen(3000,()=>{   
-    console.log('server connected')
+    console.log('server connected'+ port)
 })
