@@ -31,6 +31,6 @@ app.get('/weather',(req,res)=>{
     res.render('index')
 })       
 
-app.listen(3000,()=>{   
+app.listen(port,()=>{   
     console.log('server connected'+ port)
 })
