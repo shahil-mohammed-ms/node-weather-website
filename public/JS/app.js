@@ -17,8 +17,9 @@ weatherForm.addEventListener('submit',(e)=>{
 fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'+a+'?unitGroup=metric&key=UG7RSD7JJFJNGJS233Z2ZX55W&contentType=json').then((response)=>{
   
 response.json().then((forecastData)=>{
-    messageOne.textContent=forecastData.address
-    messageTwo.textContent=forecastData.days[0].temp
+    var place=JSON.parse(forecastData.address)
+    messageOne.textContent='Location: ' + place
+    messageTwo.textContent='It is '+ forecastData.days[0].temp+'°C'+ ' but feels like '+forecastData.days[0].feelslike+'°C'
     
        console.log(forecastData.days[0])
             console.log(forecastData.address)
