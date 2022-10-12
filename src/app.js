@@ -21,11 +21,11 @@ hbs.registerPartials(partialsPath)
 //setup static directory to serve 
 app.use(express.static(path.join((__dirname,'./public'))))
 
-// app.get('',(req,res)=>{
-//     res.render('main')
-// })                  
+app.get('',(req,res)=>{
+    res.render('main')
+})                  
 
-app.get('/',(req,res)=>{
+app.get('/weather',(req,res)=>{
 
     
     res.render('index')
