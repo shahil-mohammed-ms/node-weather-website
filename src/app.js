@@ -32,5 +32,5 @@ app.get('/weather',(req,res)=>{
 })       
 
 app.listen(port,()=>{   
-    console.log('server connected'+ port)
+    console.log('server connected to port '+ port)
 })
